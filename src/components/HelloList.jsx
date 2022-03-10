@@ -21,7 +21,8 @@ function HelloList() {
   }, []); 
   console.log(hello)
   return (
-    <div className="input">
+  
+    <div className="container">
       <div style={{justifyContent:"center" }} className="row">
      
         {hello.map((item)=> <HelloItems key={item.id} item={item.data}/>)}
