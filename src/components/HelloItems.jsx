@@ -12,7 +12,7 @@ function HelloItems({item}) {
          
         }}
         className="card border-dark mb-3 carddd"
-      ><a href="#" style={{textDecoration:"none", color:"black"}}>
+      ><a href={item.social} style={{textDecoration:"none", color:"black"}}>
         <div style={{fontSize:"21px"}} className="card-header">{item.name}</div>
         <div className="card-body">
           <div
