@@ -63,7 +63,8 @@ function AddHello() {
             placeholder="Link Your Social Media"
           />
         </div>
- <div className="col-auto">
+
+        {!JSON.parse(localStorage.getItem("hello")) && <div className="col-auto">
           <button
           
             style={{ boxShadow: "5px 5px 5px rgba(1,0,0,0.5)" }}
@@ -72,7 +73,7 @@ function AddHello() {
           >
             Send Hello
           </button>
-        </div>
+        </div>}
       </form>
     </div></div>
   );

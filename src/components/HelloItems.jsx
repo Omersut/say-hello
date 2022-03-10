@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import db from "../db/Firebase";
 
 function HelloItems({ item, id }) {
-  const random = Math.floor(Math.random() * 11);
+  const random = Math.floor(Math.random() * 10);
   const colors = [ 
     
     "#6680B3",
@@ -14,7 +14,7 @@ function HelloItems({ item, id }) {
     "#4D8066",
     "#809980",
     "#999933",
-    "#66E64D",
+  
     "#4D80CC",
     "#E64D66",
     "#4DB380",
@@ -46,7 +46,7 @@ function HelloItems({ item, id }) {
         className="card border-dark mb-3 carddd"
       ><a style={{textDecoration:"none", color:"black"}} href={a} target="_blank" rel="noopener noreferrer">
         <div style={{ fontSize: "22px", backgroundColor: colors[random], }} className="card-header">
-          {item.name}
+          {item.name.length>23 ? `${item.name.slice(0,23)}...` : item.name}
         </div></a>
         <div className="card-body">
         <a style={{textDecoration:"none", color:"black"}} href={a} target="_blank" rel="noopener noreferrer">
