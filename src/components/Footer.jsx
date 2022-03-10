@@ -44,6 +44,7 @@ function Footer() {
           <AiFillLinkedin size={"40"} style={{ color: "rgb(50,50,50)" }} />
         </a>
       </div>
+      <br/>
     </div>
   );
 }
