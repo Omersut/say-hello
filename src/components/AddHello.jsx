@@ -9,9 +9,7 @@ function AddHello() {
   const [social, setsocial] = useState("");
 
 
-useEffect(() => {
 
-}, []);
   
 
   
@@ -65,8 +63,7 @@ useEffect(() => {
             placeholder="Link Your Social Media"
           />
         </div>
-
-        {!JSON.parse(localStorage.getItem("hello")) && <div className="col-auto">
+ <div className="col-auto">
           <button
           
             style={{ boxShadow: "5px 5px 5px rgba(1,0,0,0.5)" }}
@@ -75,7 +72,7 @@ useEffect(() => {
           >
             Send Hello
           </button>
-        </div>}
+        </div>
       </form>
     </div></div>
   );

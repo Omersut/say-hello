@@ -4,38 +4,21 @@ import { useState, useEffect } from "react";
 import db from "../db/Firebase";
 
 function HelloItems({ item, id }) {
-  const random = Math.floor(Math.random() * 28);
-  const colors = [
-    "#FFB399",
-    "#FFFF99",
-    "#00B3E6",
-    "#E6B333",
-    "#999966",
-    "#99FF99",
-
-    "#E6B3B3",
+  const random = Math.floor(Math.random() * 11);
+  const colors = [ 
+    
     "#6680B3",
-    "#CCFF1A",
-    "#33FFCC",
     "#66994D",
-    "#B366CC",
-    "#E666FF",
     "#4DB3FF",
-    "#1AB399",
-    "#CC9999",
-
     "#00E680",
     "#4D8066",
     "#809980",
-
     "#999933",
-
     "#66E64D",
     "#4D80CC",
     "#E64D66",
     "#4DB380",
-    "#99E6E6",
-    "#6666FF",
+   
   ];
   const a =
     item.social[0] == "h" && item.social[1] == "t"
@@ -53,15 +36,16 @@ function HelloItems({ item, id }) {
     <>
       <div
         style={{
-          backgroundColor: colors[random],
+          
           width: "300px",
           margin: "10px",
+          padding:"0px",
           boxShadow: "2px 3px #888888",
           border: "2px solid",
         }}
         className="card border-dark mb-3 carddd"
       ><a style={{textDecoration:"none", color:"black"}} href={a} target="_blank" rel="noopener noreferrer">
-        <div style={{ fontSize: "22px" }} className="card-header">
+        <div style={{ fontSize: "22px", backgroundColor: colors[random], }} className="card-header">
           {item.name}
         </div></a>
         <div className="card-body">
