@@ -26,7 +26,7 @@ function HelloList() {
     <div className="container">
       <div style={{justifyContent:"center" }} className="row">
      
-        {hello.map((item)=> <HelloItems color={colors[random]} key={item.id} item={item.data} id={item.id}/>)}
+        {hello.map((item)=> <HelloItems key={item.id} item={item.data} id={item.id}/>)}
    
          </div>
       </div>
