@@ -8,7 +8,7 @@ function HelloItems({ item }) {
     <>
       <div
         style={{
-          width: "270px",
+          width: "300px",
           margin: "10px",
           boxShadow: "2px 3px #888888",
           border: "2px solid",
