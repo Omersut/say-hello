@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+
+import { addDoc, collection,serverTimestamp  } from "firebase/firestore";
 import db from "../db/Firebase";
 import { movieCollectionRef } from "../db/firebase-collection";
 
@@ -9,11 +10,11 @@ function AddHello() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (name === "") {
+    if (name === "" && social ==="") {
       return;
     }
     //const moviesCollRef = collection(db, "movies");
-    addDoc(movieCollectionRef, { name: name, social: social })
+    addDoc(movieCollectionRef, { name: name, social: social,   timestamp: serverTimestamp(),})
       .then((response) => {
         console.log(response.id);
       })
@@ -22,6 +23,7 @@ function AddHello() {
       });
   }
   return (
+    <div className="container">
     <div className="input">
       <form onSubmit={handleSubmit} className="row input">
         <div className="col-auto">
@@ -56,13 +58,13 @@ function AddHello() {
           <button
             style={{ boxShadow: "5px 5px 5px rgba(1,0,0,0.5)" }}
             type="submit"
-            className="btn btn-primary mb-3"
+            className="btn btn-primary"
           >
             Send Hello
           </button>
         </div>
       </form>
-    </div>
+    </div></div>
   );
 }
 
