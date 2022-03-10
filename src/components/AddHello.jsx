@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import { addDoc, collection,serverTimestamp  } from "firebase/firestore";
 import db from "../db/Firebase";
@@ -8,6 +8,14 @@ function AddHello() {
   const [name, setname] = useState("");
   const [social, setsocial] = useState("");
 
+
+useEffect(() => {
+
+}, []);
+  
+
+  
+
   function handleSubmit(e) {
     e.preventDefault();
     if (name === "" && social ==="") {
@@ -16,12 +24,16 @@ function AddHello() {
     //const moviesCollRef = collection(db, "movies");
     addDoc(movieCollectionRef, { name: name, social: social,   timestamp: serverTimestamp(),})
       .then((response) => {
-        console.log(response.id);
+        localStorage.setItem("hello",JSON.stringify(response.id))
+        setname("")
+        setsocial("")
+        
       })
       .catch((error) => {
         console.log(error.message);
       });
   }
+ 
   return (
     <div className="container">
     <div className="input">
@@ -54,15 +66,16 @@ function AddHello() {
           />
         </div>
 
-        <div className="col-auto">
+        {!JSON.parse(localStorage.getItem("hello")) && <div className="col-auto">
           <button
+          
             style={{ boxShadow: "5px 5px 5px rgba(1,0,0,0.5)" }}
             type="submit"
             className="btn btn-primary"
           >
             Send Hello
           </button>
-        </div>
+        </div>}
       </form>
     </div></div>
   );
