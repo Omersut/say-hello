@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
+
+* {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
 .App {
   text-align: center;
 }

@@ -70,7 +70,7 @@ function AddHello() {
             social
           </label>
           <input
-          style={{margin:"3px"}}
+          style={{margin:"3px",width:"230px"}}
             value={social}
             onChange={(e) => setsocial(e.target.value)}
             type="text"
